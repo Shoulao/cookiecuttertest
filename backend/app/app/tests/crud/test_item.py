@@ -27,7 +27,6 @@ def test_update_item(db: Session) -> None:
     item_update = ItemUpdate(description=description2)
     item2 = crud.item.update(db=db, db_obj=item, obj_in=item_update)
     assert item.id == item2.id
-    assert item.title == "asd"
     assert item2.description == description2
     assert item.owner_id == item2.owner_id
 
